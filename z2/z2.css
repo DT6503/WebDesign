@@ -1,0 +1,201 @@
+        *{
+            margin: 0; /*Браузеры добавляют стандартные отступы к некоторым элементам (например, к <body>, <h1>-<h6>, <p>). 
+            Это свойство убирает их, чтобы вы могли контролировать отступы самостоятельно.*/
+            padding: 0; /*Как и с margin, некоторые элементы имеют встроенные
+            отступы (например, <ul>, <input>). Это обнуляет их.*/
+            box-sizing: border-box; 
+            font-family: 'Arial', sans-serif; /*Если Arial не доступен, используется любой sans-serif шрифт.*/
+/* Без border-box */
+/*div {
+  width: 100px;
+  padding: 20px; /* Фактическая ширина = 100px + 20px + 20px = 140px */
+/*}*/
+/* С border-box */
+/*div {
+  box-sizing: border-box;
+  width: 100px;
+  padding: 20px; /* Фактическая ширина = 100px (включая padding) */
+/*}*/
+
+        }
+        
+        body {
+            background-color: #FEF5E0;
+           
+            line-height: 1.6;
+        }
+        
+       .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+grid-template-columns: 2fr 1fr; /* левая часть шире */    gap: 30px;
+}
+
+        
+        
+        header {
+            background: linear-gradient(to right, #22655B, #09322c);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            grid-column: 1 / -1; /*Элемент займёт всю ширину сетки — от первой линии (1) до последней линии (-1).*/
+            border-radius: 10px;
+        }
+        
+        h1 {
+            font-family: "Brush Script MT", cursive;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-family: "Brush Script MT", cursive;
+            color: #6B705C;
+            margin: 25px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #B7B7A4; /*
+            border-bottom - только нижняя граница
+            solid — сплошная линия (ещё бывают dashed — пунктирная, dotted — точечная).*/
+        }
+        
+        h3 {
+             font-size:150%;
+            font-family: "Brush Script MT", cursive;
+            color: #ac6f4e;
+            margin: 20px 0 10px;
+        }
+        
+        section {
+            background-color: #f8f8f8;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        
+        .news-sidebar {
+            background-color: #563141;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        
+       
+
+        .news-item img {
+    width: 100%;   /* картинка заполняет блок */
+    border-radius: 6px;    /* скруглённые углы */
+    margin-bottom: 10px;   /* отступ от текста */
+    object-fit: cover;     /* аккуратное обрезание */
+}
+
+        .news-item {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #A5A58D;
+        }
+        
+     
+        .attraction {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        /*
+        .map-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        */
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 10px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #6B705C;
+            color: white;
+            margin-top: 40px;
+            border-radius: 10px;
+            grid-column: 1 / -1;
+        }
+        
+        /*"Если ширина экрана 900px или меньше (то есть планшеты, телефоны), то примени эти стили".*/
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr; /* Вместо 2 колонок — одна */
+            }
+            
+            .symbols-container {
+                flex-direction: column; /* Символы будут не в ряд, а в колонку */
+            }
+        }
+    .history-block {
+  display: flex;
+  align-items: flex-start;
+  align-items: center;        /* выравнивание по вертикали по центру */
+  gap: 30px;
+  margin: 30px 0; /*30px сверху и 30px снизу (первое число)
+0px слева и 0px справа (второе число)*/
+}
+
+.history-image img { /*Если ты напишешь .history-image, стили применятся ко всему контейнеру <div>, а не к самой картинке.*/
+  border: 10px solid #d2a54e;   /* рамка вокруг картинки */
+  max-width: 250px;
+  height: auto;
+}
+
+.history-text {
+  max-width: 600px;
+  font-family: "Georgia", serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #2e2e2e;
+}
+
+.history-text h2 {
+  font-family: "Brush Script MT", cursive; /* рукописный стиль */
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.history-text blockquote {
+  font-style: italic;
+  border-left: 3px solid #a84a3a; /*полоса слева*/
+  padding-left: 15px; /*Отступ текста от левой полосы.*/
+  margin: 10px 0; /*Отступ сверху и снизу (10px), по бокам — нет (0).*/
+  color: #4a2c2c;
+}
+
+.highlight {
+  color: #a84a3a; /* выделение красным */
+  font-weight: bold;
+}
+ 
+/*Картинки в секторе история*/
+.gallery {
+  display: flex;              /* Включаем flex-контейнер */
+  justify-content: center;    /* Выравнивание по центру */
+  gap: 20px;                  /* Отступы между картинками */
+  margin: 20px 0;             /* Отступ сверху и снизу */
+}
+
+.gallery img {
+  max-width: 185px;           /* Чтобы все фото были одинаковыми по ширине */
+  height: auto;               /* Сохраняем пропорции */
+  border-radius: 8px;         /* Скругляем углы */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1); /* Лёгкая тень */
+}
