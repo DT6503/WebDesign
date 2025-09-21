@@ -1,0 +1,19 @@
+ .image-section {
+  display: flex;
+            flex-direction: row;
+            flex-wrap: wrap; /*переносит элементы на следующую строку при нехватке места*/
+            justify-content: center;
+            gap: 20px; /* 20px между элементами */
+            padding: 30px;  /* Отступы внутри со всех сторон розового квадрата (не фоткам) */
+            background-color: #f9f3e9;
+            border-radius: 10px; /* Закругленные углы контейнера*/
+        
+}
+
+.section-title {
+            width: 100%; /* Растянуть на всю ширину */
+           text-align: center;
+
+            color: #5d4037;
+            font-size: 1.8rem; /*1rem = 16px, поэтому 1.8rem ≈ 29px**/
+        }
